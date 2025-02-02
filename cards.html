@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon - Lista de Cartas</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./src/css/cards.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="src/imagens/logos/pokeball-icon.png" type="image/png">
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="./src/imagens/logos/logo-pokebola.png" alt="pokebola" class="logo">
+        </a>
+        <img class="pokemon-logo" src="./src/imagens/logos/logo-pokemon.png" alt="logo pokemon">
+        <button id="botao-alterar-tema">
+            <img src="./src/imagens/theme/sol.png" alt="imagem do sol" class="imagem-botao">
+        </button>
+    </header>
+    
+    <main>
+        <!-- Cartas dos Pokémons -->
+        <ul class="listagem-pokemon">
+            <!-- Bulbasaur -->
+            <li class="cartao-pokemon" data-id="001">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Bulbasaur</span>
+                            <span>#001</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/bulbasaur.gif" alt="Bulbasaur" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo grama">Grama</li>
+                            <li class="tipo veneno">Veneno</li>
+                        </ul>
+                        <p class="descricao">Nasce uma semente em suas costas, que cresce à medida que se desenvolve.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+            
+            <!-- Ivysaur -->
+            <li class="cartao-pokemon" data-id="002">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Ivysaur</span>
+                            <span>#002</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/ivysaur.gif" alt="Ivysaur" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo grama">Grama</li>
+                            <li class="tipo veneno">Veneno</li>
+                        </ul>
+                        <p class="descricao">Quando o bulbo em suas costas cresce, perde sua estabilidade de ficar de pé.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+
+            <!-- Venusaur -->
+            <li class="cartao-pokemon" data-id="003">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Venusaur</span>
+                            <span>#003</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/venusaur.gif" alt="Venusaur" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo grama">Grama</li>
+                            <li class="tipo veneno">Veneno</li>
+                        </ul>
+                        <p class="descricao">Sua flor absorve energia solar e liberar um aroma doce que atrai presas.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+            
+            <!-- Charmander -->
+            <li class="cartao-pokemon" data-id="004">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Charmander</span>
+                            <span>#004</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/charmander.gif" alt="Charmander" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo fogo">Fogo</li>
+                        </ul>
+                        <p class="descricao">Tem preferência por coisas quentes. Quando chove, sai vapor de sua cauda.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+            
+            <!-- Charmeleon -->
+            <li class="cartao-pokemon" data-id="005">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Charmeleon</span>
+                            <span>#005</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/charmeleon.gif" alt="Charmeleon" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo fogo">Fogo</li>
+                        </ul>
+                        <p class="descricao">Tem uma natureza bárbara. Na batalha, corta com garras afiadas.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+            
+            <!-- Charizard -->
+            <li class="cartao-pokemon" data-id="006">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Charizard</span>
+                            <span>#006</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/charizard.gif" alt="Charizard" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo fogo">Fogo</li>
+                        </ul>
+                        <p class="descricao">Cospe fogo que é quente o suficiente para derreter pedregulhos.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+
+            <!-- Squirtle -->
+            <li class="cartao-pokemon" data-id="007">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Squirtle</span>
+                            <span>#007</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/squirtle.gif" alt="Squirtle" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo agua">Água</li>
+                        </ul>
+                        <p class="descricao">Quando retrai seu pescoço, esguicha água com força vigorosa.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+            
+            <!-- Wartortle -->
+            <li class="cartao-pokemon" data-id="008">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Wartortle</span>
+                            <span>#008</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/wartortle.gif" alt="Wartortle" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo agua">Água</li>
+                        </ul>
+                        <p class="descricao">Suas orelhas ajudam a nadar, e sua cauda cresce conforme envelhece.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+
+            <!-- Blastoise -->
+            <li class="cartao-pokemon" data-id="009">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Blastoise</span>
+                            <span>#009</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/blastoise.gif" alt="Blastoise" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo agua">Água</li>
+                        </ul>
+                        <p class="descricao">Esmaga seu inimigo sob seu corpo pesado para causar desmaios.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+
+            <!-- Caterpie -->
+            <li class="cartao-pokemon" data-id="010">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Caterpie</span>
+                            <span>#010</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/caterpie.gif" alt="Caterpie" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo inseto">Inseto</li>
+                        </ul>
+                        <p class="descricao">Libera um fedor horrível da antena em sua cabeça para afastar inimigos.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+            
+            <!-- Metapod -->
+            <li class="cartao-pokemon" data-id="011">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Metapod</span>
+                            <span>#011</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/metapod.gif" alt="Metapod" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo inseto">Inseto</li>
+                        </ul>
+                        <p class="descricao">Endurece sua casca para proteção enquanto evolui para Butterfree.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+
+            <!-- Butterfree -->
+            <li class="cartao-pokemon" data-id="012">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Butterfree</span>
+                            <span>#012</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/butterfree.gif" alt="Butterfree" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo inseto">Inseto</li>
+                            <li class="tipo voador">Voador</li>
+                        </ul>
+                        <p class="descricao">Pode espalhar pólen de suas asas para confundir seus adversários.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+
+            <!-- Pichu -->
+            <li class="cartao-pokemon" data-id="013">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Pichu</span>
+                            <span>#013</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/pichu.gif" alt="Pichu" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo eletrico">Elétrico</li>
+                        </ul>
+                        <p class="descricao">Embora ainda fraco, ele pode gerar pequenas descargas elétricas.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+
+            <!-- Pikachu -->
+            <li class="cartao-pokemon" data-id="014">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Pikachu</span>
+                            <span>#014</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/pikachu.gif" alt="Pikachu" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo eletrico">Elétrico</li>
+                        </ul>
+                        <p class="descricao">Armazena eletricidade em suas bochechas e liberá-la em ataques poderosos.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+
+            <!-- Raichu -->
+            <li class="cartao-pokemon" data-id="015">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Raichu</span>
+                            <span>#015</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/raichu.gif" alt="Raichu" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo eletrico">Elétrico</li>
+                        </ul>
+                        <p class="descricao">Possui uma cauda que atua como aterramento para descargas elétricas.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+
+            <!-- Abra -->
+            <li class="cartao-pokemon" data-id="016">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Abra</span>
+                            <span>#016</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/abra.gif" alt="Abra" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo psiquico">Psíquico</li>
+                        </ul>
+                        <p class="descricao">Dorme 18 horas por dia e se teletransporta para evitar perigos.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+
+            <!-- Kadabra -->
+            <li class="cartao-pokemon" data-id="017">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Kadabra</span>
+                            <span>#017</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/kadabra.gif" alt="Kadabra" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo psiquico">Psíquico</li>
+                        </ul>
+                        <p class="descricao">Usa seu poder psíquico para dobrar colheres e confundir inimigos.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+
+            <!-- Alakazam -->
+            <li class="cartao-pokemon" data-id="018">
+                <div class="cartao-inner">
+                    <div class="frente">
+                        <div class="informacoes">
+                            <span>Alakazam</span>
+                            <span>#018</span>
+                        </div>
+                        <img src="./src/imagens/pokemons/alakazam.gif" alt="Alakazam" class="gif">
+                        <ul class="tipos">
+                            <li class="tipo psiquico">Psíquico</li>
+                        </ul>
+                        <p class="descricao">Tem um QI de 5000 e pode lembrar de tudo que já viu.</p>
+                    </div>
+                    <div class="verso">
+                        <img src="./src/imagens/pokemons/pokemon-card-back.webp" alt="Verso da Carta">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 <a href="https://github.com/paulaPSOx" target="_blank" class="github-link">PaulaPSOx</a>. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./src/js/cards.js"></script>
+</body>
+</html>

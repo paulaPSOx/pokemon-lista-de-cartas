@@ -1,0 +1,555 @@
+/* RESET GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    cursor: url('/src/imagens/pointer/seta.cur'), auto;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 🎯 Barra de Rolagem - Modo Claro */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #0044CC, #ff0000);
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    transition: background 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #4d008b, #f7d02c);
+}
+
+/* Ajuste do Body */
+body {
+    margin: 0 auto;
+    width: 100vw;
+    min-height: 100vh;
+    height: 100vh;
+    height: -webkit-fill-available;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: url('./src/imagens/theme/wallpaper-sol.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* 🌞 MODO CLARO */
+body {
+    background: url('./src/imagens/theme/wallpaper-sol.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* 🌙 MODO ESCURO */
+body.modo-escuro {
+    background: url('./src/imagens/theme/wallpaper-lua.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* 🎯 HEADER PERSONALIZADO */
+header {
+    background: linear-gradient(to right, rgba(255, 204, 0, 0.63), rgba(255, 0, 0, 0.643)), url('./src/imagens/theme/pokemon-bg.jpg');
+    background-size: cover;
+    background-blend-mode: multiply;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: background 1s ease-in-out;
+}
+
+/* 📌 HEADER MODO ESCURO */
+body.modo-escuro header {
+    background: linear-gradient(to right, rgba(27, 27, 47, 0.61), rgba(62, 44, 141, 0.63));
+}
+
+/* 📌 Logo da Pokébola */
+header .logo {
+    width: 65px;
+    transition: transform 0.3s ease-in-out;
+}
+
+header .logo:hover {
+    transform: scale(1.2) rotate(-10deg);
+}
+
+/* 🔄 Pokébola gira ao trocar de tema */
+header .imagem-botao {
+    width: 45px;
+    transition: transform 0.5s ease-in-out;
+}
+
+body.modo-escuro .imagem-botao {
+    transform: rotate(360deg);
+}
+
+/* 📌 Logo Pokémon */
+header .pokemon-logo {
+    width: 180px;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+}
+
+/* 📌 Botão de trocar tema */
+header #botao-alterar-tema {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 🔥 ANIMAÇÃO DE BRILHO */
+@keyframes brilho {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.3); }
+    100% { filter: brightness(1); }
+}
+
+header:hover {
+    animation: brilho 1.5s infinite;
+}
+
+/* 🔥 CARTÕES POKÉMON */
+main {
+    padding: 100px 25px 25px;
+}
+
+main .listagem-pokemon {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+/* 🎴 ESTILIZAÇÃO DOS CARDS */
+.cartao-pokemon {
+    width: 220px;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.cartao-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* 🎴 CARDS POR LINHA */
+.listagem-pokemon {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 📏 TAMANHO DOS CARDS */
+.cartao-pokemon {
+    width: 220px;
+    height: 300px;
+    max-width: 250px;
+}
+
+/* 🎴 Frente do Card */
+.frente {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    border: 5px solid rgb(245, 221, 10);
+    background: radial-gradient(circle, #fff, #e9d8d8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    justify-content: space-between;
+    box-shadow: -5px 5px 10px 2px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cartao-pokemon:hover .frente {
+    transform: scale(1.05);
+}
+
+/* 🎴 Verso do Card */
+.verso img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* 🔄 Rotação ao clicar */
+.cartao-pokemon.virado .cartao-inner {
+    transform: rotateY(180deg);
+}
+
+/* 🏆 INFORMAÇÕES DOS CARDS */
+/* 🎴 Tipos de Pokémon */
+.frente {
+    background: url('./src/imagens/card-textura.jpg'), linear-gradient(to bottom, #f8f8f8, #d6b066);
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: #000;
+    border: 8px solid #D4AF37;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(255, 215, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.frente .tipo {
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.frente .informacoes {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.frente .informacoes span {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* 💡 Efeito de brilho nas bordas */
+.frente:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 0px 18px rgba(255, 215, 0, 0.8);
+}
+
+/* 📖 Descrição com rolagem independente no mobile */
+.frente .descricao {
+    max-height: 80px;
+    overflow-y: auto;
+    font-size: 12px;
+    text-align: justify;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* 🎨 Nome do Pokémon */
+.frente .informacoes {
+    background: linear-gradient(to bottom, rgba(255, 215, 0, 0.9), rgba(245, 245, 220, 0.7));
+    border: 2px solid #B8860B;
+    border-radius: 6px;
+    padding: 5px 8px;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* 🏆 Barra de Tipos */
+.frente .tipos {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    width: 100%;
+    padding: 4px;
+}
+
+/* 🔥 Imagem do Pokémon */
+.frente .gif {
+    width: 115px;
+    height: 115px;
+    border-radius: 10px;
+    border: 2.5px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    margin: 4px 0;
+}
+
+
+/* 🟢 Cores dos tipos */
+.grama {
+    background-color: #7ac74c;
+    border: 2px solid #5fa136;
+    color: white;
+}
+
+.veneno {
+    background-color: #df67dd;
+    border: 2px solid #a14a98; 
+    color: white;
+}
+
+.fogo {
+    background-color: #ee8130;
+    border: 2px solid #cc5f1b;
+    color: white;
+}
+
+.agua {
+    background-color: #6390f0;
+    border: 2px solid #3760c9;
+    color: white;
+}
+
+.inseto {
+    background-color: #a6b91a;
+    border: 2px solid #728a18;
+    color: white;
+}
+
+.voador {
+    background-color: #a98ff3;
+    border: 2px solid #6f72b6;
+    color: white;
+}
+
+
+.eletrico {
+    background-color: #e6c02a;
+    border: 2px solid #cba600;
+    color: white;
+}
+
+.psiquico {
+    background-color: #f95587;
+    border: 2px solid #c23b5f;
+    color: white;
+}
+
+/* ✨ EFEITO DE CRESCIMENTO NO HOVER DOS TIPOS */
+.fogo:hover, 
+.agua:hover, 
+.grama:hover, 
+.voador:hover, 
+.inseto:hover, 
+.eletrico:hover, 
+.psiquico:hover, 
+.veneno:hover {
+    box-shadow: 0 0 3px 1px currentColor;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* 🎯 DESCRIÇÃO DO POKÉMON */
+.descricao {
+    max-height: 80px;
+    overflow-y: scroll;
+    font-size: 14px;
+    padding: 15px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* 🎴 Verso do Card */
+.verso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    transform: rotateY(180deg);
+}
+
+.verso img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* 🔄 Rotação ao clicar */
+.cartao-pokemon.virado .cartao-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* 🔄 Ajuste do Verso do Card */
+.verso {
+    background: url('./src/imagens/pokemon-card-back.webp') center/cover no-repeat;
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+}
+
+/* 🎴 CARDS POR LINHA */
+.listagem-pokemon {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 📏 TAMANHO DOS CARDS */
+.cartao-pokemon {
+    width: 220px;
+    height: 300px;
+    max-width: 250px;
+}
+
+/* 🔥 Modo Escuro */
+body.modo-escuro .frente {
+    background: url('./src/imagens/card-textura-dark.jpg'), linear-gradient(to bottom, #2d2d2d, #3b3b3b);
+    background-blend-mode: multiply;
+    color: #fff;
+    border: 8px solid #FFD700;
+}
+
+body.modo-escuro .frente .informacoes {
+    background: linear-gradient(to bottom, rgba(255, 215, 0, 0.9), rgba(105, 105, 105, 0.7));
+    color: #fff;
+}
+
+body.modo-escuro .frente .descricao {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+/* 💡 Efeito de Luz ao Passar o Mouse */
+@keyframes brilho-card {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.1); }
+    100% { filter: brightness(1); }
+}
+
+.frente:hover {
+    animation: brilho-card 1.5s infinite;
+}
+
+/* 🎯 FOOTER PERSONALIZADO */
+footer {
+    background: linear-gradient(to right, rgba(255, 204, 0, 0.63), rgba(255, 0, 0, 0.643)), url('./src/imagens/theme/pokemon-bg.jpg');
+    background-size: cover;
+    background-blend-mode: multiply;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+}
+
+/* 📌 FOOTER MODO ESCURO */
+body.modo-escuro footer {
+    background: linear-gradient(to right, rgba(27, 27, 47, 0.61), rgba(62, 44, 141, 0.63));
+}
+
+/* Link do rodapé */
+.github-link {
+    color: #0044CC;
+    transition: color 0.3s ease-in-out;
+}
+
+.github-link:hover {
+    color: #f7d02c;
+}
+
+/* Responsividade */
+
+@media (max-width: 924px) {
+    .listagem-pokemon {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+    }
+    body {
+        height: auto;
+        min-height: 100vh;
+        height: -webkit-fill-available;
+    }
+}
+
+@media (max-width: 768px) {
+    .listagem-pokemon {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 300px;
+    }
+    body {
+        height: auto;
+        min-height: 100vh;
+        height: -webkit-fill-available;
+    }
+    header {
+        height: 70px;
+        padding: 10px 20px;
+    }
+    header .logo {
+        width: 45px;
+    }
+    header .pokemon-logo {
+        width: 140px;
+    }
+    main {
+        padding: 80px 15px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        height: -webkit-fill-available;
+    }
+    header {
+        height: 60px;
+        padding: 8px 15px;
+    }
+    header .logo {
+        width: 40px;
+    }
+    header .pokemon-logo {
+        width: 120px;
+    }
+    .listagem-pokemon {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
